@@ -1,0 +1,118 @@
+<section class="header">
+  
+<nav>
+  <a >
+ <div class="carousel-item active">
+        <img src="assets/aboutus/9.jpg"
+                     
+        height="550px" width="500px" style="background-image: 100%;" alt="...">
+        
+        
+      </div> 
+
+</a>
+</nav>
+<!-- <nav>
+  <a >
+ <div class="carousel-item active1">
+        <div class="column">
+          <img src="assets/aboutus/9.jpg" alt="" height="500px" width="450px" style="background-image:100%;">
+        </div>
+      </div> 
+
+</a>
+</nav> -->
+
+<div class="text-center">
+  <h4 class="text-cent"><strong>Registration  Form</strong></h4>
+  <div class="text-center ">
+    <div class="first">
+    <h1><strong> ⋆  🎀  Welcome to the Auberge  🎀  ⋆ </strong></h1>
+    <h3> <strong>🎀  An excellent spot to stay 😊🎀 </strong> </h3>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+    <div class="example-container">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="guestId" formControlName="guestId">
+          <mat-error *ngIf="!loginForm.get('guestId')?.errors?.required && (loginForm.get('guestId')?.errors?.pattern)">
+            Please enter a valid Id at least 3 digit
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('guestId')?.invalid && (loginForm.get('guestId')?.dirty || loginForm.get('guestId')?.touched) && loginForm.get('guestId')?.errors?.required">
+            Id is required
+          </mat-error>
+          </mat-form-field>
+        </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="guestName" formControlName="guestName">
+          <mat-error *ngIf="!loginForm.get('guestName')?.errors?.required && (loginForm.get('guestName')?.errors?.pattern)">
+            Please enter a valid name address
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('guestName')?.invalid && (loginForm.get('guestName')?.dirty || loginForm.get('guestName')?.touched) && loginForm.get('guestName')?.errors?.required">
+            Name is required
+          </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+          <input matInput placeholder="guestEmail" formControlName="guestEmail">
+          <mat-error *ngIf="!loginForm.get('guestEmail')?.errors?.required && (loginForm.get('guestEmail')?.errors?.pattern)">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('guestEmail')?.invalid && (loginForm.get('guestEmail')?.dirty || loginForm.get('guestEmail')?.touched) && loginForm.get('guestEmail')?.errors?.required">
+            Correct email address is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+      <mat-radio-group formcontrolname="guestGender" class="margin-left">
+        <mat-radio-button value="male"> Male </mat-radio-button>
+        <mat-radio-button value="female"> Female </mat-radio-button>
+      </mat-radio-group>
+      </div>
+      <!-- <div>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">    
+          <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+            Password length must be greater than or equal to 8 and password must contain one or more uppercase , lowercase , numeric and special characters
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+      </div> -->
+      <div>
+        <mat-form-field>
+          <input matInput type="guestAddress" placeholder="guestaddress" formControlName="guestAddress">    
+          <mat-error *ngIf="!loginForm.get('guestAddress')?.errors?.required">
+            Address length must be greater than or equal to 10 
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('guestAddress')?.invalid && (loginForm.get('guestAddress')?.dirty || loginForm.get('guestAddress')?.touched) && loginForm.get('guestAddress')?.errors?.required">
+            address is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput type="guestContact" placeholder="guestcontact" formControlName="guestContact">    
+          <mat-error *ngIf="!loginForm.get('guestContact')?.errors?.required">
+            Contact length must be  equal to 10 
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('guestContact')?.invalid && (loginForm.get('guestContact')?.dirty || loginForm.get('guestContact')?.touched) && loginForm.get('guestContact')?.errors?.required">
+            contact is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="mt-top">
+        <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Register</button>
+      </div>
+      <br>
+      <div>
+      <a routerLink="/login">Aleady a member ? Click here to login</a>
+    </div>
+    </div>
+  </form>
+  
+</div>

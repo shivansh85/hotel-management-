@@ -1,0 +1,124 @@
+<section class="header">
+    <nav>
+
+        <a href="" routerLink="/dashboard">
+
+            <div class="carousel-item active">
+                <img src="assets/aboutus/16.jpg"
+                             
+                  height="150px" width="150px" style="border-radius: 40%;" alt="...">
+              </div>
+
+        </a>
+        <div class="nav-links" id="navLinks">
+
+            <div class="d-flex">
+                <ul>
+                    <li><a href="" routerLink="/dashboard">DASHBOARD  </a></li>
+                    <li><a href="" routerLink="/manager">MANAGER</a></li>
+                    <!-- <li><a href="" routerLink="/reservation">BOOKING DETAILS</a></li>
+                    <li><a href="" routerLink="/room">ROOM DETAILS</a></li>
+                    <li><a href="" routerLink="/department">DEPARTMENT</a></li>
+                    <li><a href="" routerLink="/inventory">INVENTORY</a></li>
+                    <li><a href="" routerLink="/staff">STAFF</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<section class="center" style="text-align: center;">
+    <!-- <h2 style="text-align: center;">[.....All Staff Details.....]</h2> -->
+    <h3 class="text-center" style="color: rgb(13, 14, 14);"><strong>LIST OF STAFF</strong></h3>
+    <div class="d-flex">
+        <table class="table table-hover table-dark table-bordered" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th>Staff Id</th>
+                    <th>Staff DepartMent Id</th>
+                    <th>Staff Name</th>
+                    <th>Staff Department Name</th>
+                    <th>Staff Email</th>
+                    <th>Staff Salary</th>
+                     <th>Action</th> 
+        
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let staff of staff">
+                    <td>{{staff.empId}}</td>
+                    <td>{{staff.empDeptId}}</td>
+                    <td>{{staff.empName}}</td>
+                    <td>{{staff.empDeptName}}</td>
+                    <td>{{staff.email}}</td>
+                    <td>{{staff.empSalary}}</td>
+                    <td>
+                        <button class="btn btn-success" type="button" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                        (click)="onEditDep(staff)"><mat-icon>edit</mat-icon></button>
+                        <button class="btn btn-danger" type="button" type="button" (click)="deleteStaffs(staff)"><mat-icon>delete</mat-icon></button>
+                    </td>           
+                </tr>
+            </tbody>
+        </table>
+    </div>
+       
+
+    <button class="btn btn-success" type="button" data-bs-toggle="modal"
+    data-bs-target="#exampleModal"><mat-icon>add</mat-icon> Staff Details</button>
+
+</section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Inventory Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Staff Id</label>
+                            <input type="text" formControlName="empId" placeholder="Enter your Staff ID" class="form-control"
+                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Staff DepartMent Id</label>
+                            <input type="text" formControlName="empDeptId" placeholder="Enter Staff's Dept Id" class="form-control"
+                                id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Staff Name</label>
+                            <input type="text" formControlName="empName" placeholder="Staff Name" class="form-control"
+                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Staff Department Name</label>
+                            <input type="text" formControlName="empDeptName" placeholder="Staff's Department Name" class="form-control"
+                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Staff Email</label>
+                            <input type="text" formControlName="email" placeholder="Email Id" class="form-control"
+                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Staff Salary</label>
+                            <input type="text" formControlName="empSalary" placeholder="Staff Salary" class="form-control"
+                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal"(click)="addstaffto()">Add Details</button>
+                
+                  <button type="button" class="btn btn-primary" (click)="updateStaffs()">Update Details</button>
+                </div>
+            </div>
+        </div>
+    </div>

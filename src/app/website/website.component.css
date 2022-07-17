@@ -1,0 +1,71 @@
+body, html{
+  height: 100%;
+  margin: 0%;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color:#666;
+
+}
+.pimg1,.pimg2, .pimg3{
+  position: relative;
+  /* opacity: 0.70; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+/*
+fixed= parallax
+scroll = normal
+*/
+  background-attachment: fixed;
+}
+.pimg1{
+  background-image: url('/assets/website/hotel1.jpg');
+  min-height: 300px;
+}
+.pimg2{
+  background-image: url('/assets/website/hotel2.jpg');
+  min-height: 500px;
+}
+.pimg3{
+  background-image: url('/assets/website/hotel3.jpg');
+  min-height: 1000px;
+}
+.section{
+  text-align: center;
+  padding: 25px;
+}
+.section-light{
+  background-color: transparent;
+  color: rgb(35, 34, 34);
+
+}
+.section-drak{
+  background-color: transparent;
+  color: rgb(36, 35, 35);
+
+}
+.ptext{
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  color: rgb(29, 29, 29);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.ptext .border{
+  background-color: rgba(50, 50, 50, 0);
+  color:rgb(152, 151, 151);
+  padding: 20px;
+}
+.ptext .border.trans{
+  background-color: transparent;
+}
+@media  (max-width: 250px){
+.pimg1, .pimg2, .pimg3{
+  background-attachment: scroll;
+}
+}

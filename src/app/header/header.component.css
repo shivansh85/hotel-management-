@@ -1,0 +1,62 @@
+/* div{
+    margin: right 80px;
+     font-size: 25px;
+     text-decoration-color: rgb(12, 12, 12);
+    
+    
+ }
+ 
+
+.navbar {
+    justify-content: space-between;
+    background-color: rgb(15, 15, 15); 
+     height: 50px;
+   
+    
+}
+button{
+    padding-right: 1rem;
+    background-color: rgb(24, 23, 23);
+ 
+    
+    
+
+    
+}
+
+.navigation :hover{
+    background: #fff;
+    padding: 1px;
+    
+}
+.a{
+    margin: 12px;
+} */
+div{
+    margin: right 80px;
+     font-size: 25px;
+     text-decoration-color: rgb(255, 255, 255);
+    
+ }
+ 
+
+.navbar {
+    justify-content: space-between;
+    background-color: rgb(14, 15, 15); 
+     height: 50px;
+    
+    
+}
+button{
+    padding-right: 1rem;
+    background-color: rgb(121, 116, 116);
+    margin: 4px;
+    
+
+    
+}
+
+.navigation :hover{
+    background: rgb(109, 106, 106);
+    
+}

@@ -1,0 +1,90 @@
+
+<section class="header">
+  <nav>
+
+      <a href="" routerLink="/dashboard">
+
+
+        <div class="carousel-item active">
+          <img src="assets/images.png"
+                       
+            height="150px" width="150px" style="border-radius: 50%;" alt="...">
+        </div>
+
+      </a>
+      <div class="nav-links" id="navLinks">
+
+          <div class="d-flex">
+              <ul>
+                <li><a href="" routerLink="/dashboard">DASHBOARD</a></li>
+                <li><a href="" routerLink="/manager">MANAGER</a></li>
+                  <!-- <li><a href="" routerLink="/reservation">BOOKING DETAILS</a></li>
+                  <li><a href="" routerLink="/room">ROOM DETAILS</a></li>
+                  <li><a href="" routerLink="/department">DEPARTMENT</a></li>
+                  <li><a href="" routerLink="/inventory">INVENTORY</a></li>
+                  <li><a href="" routerLink="/staff">STAFF</a></li> -->
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+<div class="container">
+    <div classs="card">
+     <h3 class="text-center" style="color: rgb(16, 17, 17);"><strong>LIST OF INVENTORY</strong></h3>
+       <div class="card-body">
+         <table class="table table-stripped" style="background-color: rgb(237, 243, 243) ;">
+           <thead> 
+               <th>inventory_id</th>
+               <th>inventory_name</th> 
+               <th>Action</th>
+           </thead>
+             <tbody>
+              <tr *ngFor = "let inventory of inventorys" style="color: #5555be;">                              
+                    <td>{{inventory.inventory_id}}</td>
+                    <td>{{inventory.inventory_name}}</td>
+                  
+                    <td>
+         <button (click) = "updateInventory()" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" width="5px">
+          <mat-icon>edit</mat-icon></button>
+         &nbsp;<button class="btn btn-danger" (click) = "deleteInventory(inventory)"><mat-icon>delete</mat-icon></button>
+         </td>
+          </tr>
+          </tbody>
+           </table>
+           <button class="btn btn-success" type="button" data-bs-toggle="modal"
+    data-bs-target="#exampleModal"><mat-icon>add</mat-icon>Inventory Details</button>
+             </div>
+         </div>
+     
+     </div>
+   
+     <!-- Modal - 1-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <label class="form-label">INVENTORYS DETAILS</label>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="formValue">
+                  
+           <div class="mb-3">
+                  <label class="form-label">inventory_id</label>
+                  <input type="text" formControlName="inventory_id" class="form-control"  id="exampleInputEmail">
+              </div>
+   
+                  <div class="mb-3">
+                      <label class="form-label">inventory_name</label>
+                      <input type="text" formControlName="inventory_name" class="form-control"  id="exampleInputEmail">
+                  </div>
+                 
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button  type="button" (click)="updateInventory()" class="btn btn-primary">Update Inventory</button>
+            <button  type="button" (click)="clickAddInventory()"class="btn btn-primary" >Add inventory</button>
+          </div>
+        
+      
+   
+   

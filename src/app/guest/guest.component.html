@@ -1,0 +1,135 @@
+<!-- <p>guest works!</p> -->
+<section class="header">
+  <nav>
+
+      <a href="" routerLink="/dashboard">
+
+
+        <div class="carousel-item active">
+          <img src="assets/images.png"
+                       
+            height="150px" width="150px" style="border-radius: 50%;" alt="...">
+        </div>
+
+      </a>
+      <div class="nav-links" id="navLinks">
+           <!-- <h3 class="text-center" style="color: rgb(231, 238, 238);">LIST OF DEPARTMENTS</h3> -->
+
+          <div class="d-flex">
+              <ul>
+                <li><a href="" routerLink="/dashboard">DASHBOARD </a></li>
+                <li><a href="" routerLink="/receptionist">RECEPTIONIST </a></li>
+                  <!-- <li><a href="" routerLink="/rece">BOOKING DETAILS</a></li> -->
+                  <!-- <li><a href="" routerLink="/room">ROOM DETAILS</a></li>
+                  <li><a href="" routerLink="/department">DEPARTMENT</a></li>
+                  <li><a href="" routerLink="/inventory">INVENTORY</a></li>
+                  <li><a href="" routerLink="/staff">STAFF</a></li> -->
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <h3 class="text-center" style="color: rgb(231, 238, 238);">LIST OF GUEST'S</h3>
+  <!-- table -->
+  <section class="center">
+
+      <div>
+          <button class="btn btn-success" type="button" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" style="font-size: 15px"><mat-icon>add</mat-icon>Guest</button>
+          <br>
+          <!-- <a href="" class="hero-btn" routerLink="/guest" style="font-size: 30px;">See Guest Details</a> -->
+          
+      </div>
+      </section>
+      <br>
+
+
+  <table class="table table-dark" style="text-align: center;">
+      <thead>
+          <tr>
+              <th scope="col">Guest ID</th>
+              <th scope="col">GuestName</th>
+              <th scope="col">Guest Email</th>
+              <th scope="col">Guest Gender</th>
+              <th scope="col">Guest Address</th>
+              <th scope="col">Guest Contact</th>
+              <th scope="col">Action</th>
+          </tr>
+
+      </thead>
+      <tbody>
+          <tr *ngFor="let guest of guest">
+              
+              <td>{{guest.guestId}}</td>
+              <td>{{guest.guestName}}</td>
+              <td>{{guest.guestEmail}}</td>
+              <td>{{guest.guestGender}}</td>
+              <td>{{guest.guestAddress}}</td>
+              <td>{{guest.guestContact}}</td>
+              <td>
+                  <button class="btn btn-success" type="button" type="button" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal" (click)="onEditGue(guest)"><mat-icon>edit</mat-icon></button>
+                  <button class="btn btn-danger" type="button"  (click)="deleteGuests()"><mat-icon>delete</mat-icon></button> 
+              </td>
+
+            
+          </tr>
+      </tbody>
+
+  </table>
+  <div class="btn">
+  <button class="btn btn-success" type="button" data-bs-toggle="modal"
+  data-bs-target="#exampleModal">Add Guest Details</button>
+</div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Guest Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form [formGroup]="formValue">
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Guest Id</label>
+                      <input type="text" formControlName="guestId" placeholder="Enter Id" class="form-control"
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Guest Name</label>
+                      <input type="text" formControlName="guestName" placeholder="Enter Name" class="form-control"
+                          id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Guest Email</label>
+                      <input type="text" formControlName="guestEmail" placeholder="Enter Email" class="form-control"
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Guest Gender</label>
+                      <input type="text" formControlName="guestGender" placeholder="Enter Gender" class="form-control"
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Guest Address</label>
+                      <input type="text" formControlName="guestAddress" placeholder="Enter Address" class="form-control"
+                          id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Guest Contact</label>
+                      <input type="text" formControlName="guestContact" placeholder="Enter Contact number"
+                          class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <!-- <a href="" routerLink="/payment"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">PayNow</button></a> -->
+              <!-- <button type="button" class="btn btn-primary" (click)="addGuest()">Add Details</button> -->
+              <button type="button" class="btn btn-primary" (click)="updateGuests()">Update Details</button>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+/* div{
+     background-image: url("/assets/booking/images.jpg"); 
+    text-align: center;
+    padding: 2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}   */
+/* smart-wrap{
+    background-image: url("/assets/booking/images.jpg");
+    position: relative;
+    text-align: center;
+    padding: 2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+} */
+
+/* div{
+    background-image: url("/assets/booking/images.jpg");
+    text-align: center;
+    padding: 1px;
+    height: 5px;
+    width:5px;
+
+} */
+/* span{
+    text-align: center;
+} */
+/* .text-center{
+    
+    text-align: center;
+    background-color:rgb(16, 17, 17);
+    width:100%
+    
+  }
+div{
+    background-image: url("/assets/aboutus/18.jpg");
+     background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+first{
+    color: black;
+}
+input-grp{
+    size: 20px;
+  } */
+  h1{
+    text-align: center;
+    /* margin: 2px; */
+    /* padding: 2px; */
+    font-family: " Cursive";
+    
+}
+div{
+    text-align: center;
+    background-origin: border-box;
+    
+}
+.booking-form-box
+{
+  max-width:400px;
+  border: 1px solid #ced4da;
+  margin: 10px auto 0;
+}
+
+.booking-form{
+  max-width:300px;
+
+  border: 1px solid white;
+  margin: 10px auto 0;
+  padding: 0 20px 20px
+}
+
+.radio-btn{
+    margin: 0 20px;
+}
+.radio-btn .btn{
+   margin:20px 10px 20px 0;
+   box-shadow:none;
+}
+.radio-btn.btn::after{
+   content:'';
+   height:15px;
+   width: 15px;
+   top:-2px;
+   left:-1px;
+   background-color: rgb(26, 24, 24);
+   position:relative;
+   display:inline-block;
+   border: 3px soldi #fff;
+   visibility:visible;
+   border-radius:50%;
+}
+.radio-btn.btn:checked::after{
+   content:'';
+   background-color: #000;
+   transition: 0.5s;
+}
+.radio-btn span{
+   color: pink;
+   margin: right 5px;font-size: 12px;
+}
+.booking-form label{
+   margin-bottom: 5px;
+   margin-top: 10px;
+   font-size: 12px;
+   color: rgb(10, 9, 9);
+}
+input::placeholder{
+   color: rgb(30, 30, 32) !important
+}
+.form-control{
+   font-size: 12 px !important;
+   border-radius: 0 !important;
+   color: rgb(13, 13, 14) !important;
+   background:transparent;
+   box-shadow:none;
+}
+.example-spacer{
+   flex: 1 1 auto;
+}
+div{
+    background-image: url("/assets/aboutus/18.jpg");
+     background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+/* span{
+    text-align: center;
+    color: black;
+} */

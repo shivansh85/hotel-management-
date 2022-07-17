@@ -1,0 +1,148 @@
+<mat-toolbar color="primary" >
+  <span ><mat-icon>menu</mat-icon> My Booking </span>
+  <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+</mat-toolbar>
+<section class="header">
+  <nav>
+    
+    
+
+      <!-- <a href="" routerLink="/dashboard"> -->
+
+          <!-- <div class="carousel-item active">
+              <img src="assets/images.png"
+                           
+                height="150px" width="150px" style="border-radius: 50%; position: left;" alt="...">
+            </div> -->
+<div class="space"></div>
+    <span class="example-spacer"></span>
+
+    <div class="text-center ">
+      <div class="first">
+      <h1><strong> ⋆   🎀  Welcome to the Auberge 🎀  ⋆ </strong></h1>
+      <h3> <strong>🎀 Confirm Your Booking 😊🎀 </strong> </h3>
+<br>
+ 
+      <body class="mat-typography">
+        <div>
+          <div class="booking-form">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Name" required>
+            <br>
+            <div class="booking-form">
+              <label>Booking-Id</label>
+              <input type="number" class="form-control" placeholder="Booking-Id" required>
+              <br>
+            <div>
+              <div class="booking-form">
+                <label>RoomId</label>
+                <input type="number" class="form-control" placeholder="RoomId" required>
+                <br>
+              <mat-form-field>
+              <mat-label><b><strong>RoomType</strong></b></mat-label>
+               <mat-select placeholder="RoomType" [(value)]="selectedValue" >
+               <mat-optgroup label='RoomType' >
+                  <mat-option value='Single'>Single</mat-option>
+                  <mat-option value='Double'>Double</mat-option>
+                  <mat-option value='Triple'>Triple</mat-option>
+                  <mat-option value='Quad'>AC</mat-option>
+                  <mat-option value='Queen'>NON AC</mat-option>
+                  <mat-option value=' King'> Free wifi</mat-option>
+                  <mat-option value=' Twin'> avaliable with tv</mat-option>
+               </mat-optgroup>
+              </mat-select>
+            </mat-form-field>
+            {{selectedValue}}
+            </div> 
+              
+          <div class="input-grp">
+            <label>check-in</label>
+            <input type="date" class="form-control select-date" required>
+          </div>
+          <div class="input-grp">
+            <label>Check-out</label>
+            <input type="date" class="form-control select-date" required>
+          </div>
+          <div class="booking-form">
+            <label>NoOfGuests</label>
+            <input type="number" class="form-control" placeholder="NoOfGuests" required>
+          
+          
+<nav>
+  <br>
+  <div class="form-footer">
+    <td> <a mat-raised-button routerLink="/payment"> <button class="btn btn-success">Confirm Booking</button> </a>
+    <!-- <a color=primary mat-raised-button routerLink="/payment">Confirm Booking </a> <br> -->
+    <!-- <button type="submit" class="button ">Confirm Booking<a routerLink="/paymentstripe" routerLinkActive="active"></a></button> -->
+    <a  color=primary mat-raised-button routerLink="/">Cancel </a>
+
+</div>
+
+  
+
+
+  <!-- <mat-form-field appearance="fill">
+    <mat-label><strong><b>Check-in</b></strong></mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+
+    </mat-datepicker-toggle><mat-datepicker #picker startView="year" [startAt]="startDate">
+
+    </mat-datepicker></mat-form-field> -->
+    <!-- <div class="input-grp">
+      <label>Check-in</label>
+      <input type="date" class="form-control select-date" required>
+    </div>
+  
+
+</div>
+<br>
+<div>
+  <div class="input-grp">
+    <label>Check-out</label>
+    <input type="date" class="form-control select-date " required>
+  </div> -->
+  <!-- <mat-form-field appearance="fill">
+    <mat-label><strong><b>Check-out</b></strong></mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+
+    </mat-datepicker-toggle><mat-datepicker #picker startView="year" [startAt]="StartDate">
+
+    </mat-datepicker></mat-form-field> -->
+  <!-- </div>
+  <div>
+    <mat-form-field>
+      <input
+        type="number"
+        class="form-control"
+        matInput
+        name="value"
+        placeholder="numofguests"
+        
+        formControlName="numofguests">
+        </mat-form-field>
+  </div>
+        -->
+   
+  
+
+
+
+  <!-- <div class="form-footer">
+    <a color=primary mat-raised-button routerLink="/payment">Confirm Booking </a> -->
+    <!-- <button type="submit" class="button ">Confirm Booking<a routerLink="/payment" routerLinkActive="active"></a></button> -->
+    <!-- <a  color=primary mat-raised-button routerLink="/dashboard">Cancel </a>
+  </div>
+  <br>
+  <nav>
+ 
+    <br> -->
+    <!-- <a routerLink="/payment" routerLinkActive="active">NEXT</a><br> -->
+    
+  <!-- </nav> 
+</div> -->
+

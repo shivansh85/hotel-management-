@@ -1,0 +1,118 @@
+<!-- <p>roomlist works!</p> -->
+<section class="header">
+    <nav>
+  
+        <a href="" routerLink="/dashboard">
+  
+  
+          <div class="carousel-item active">
+            <img src="assets/images.png"
+                         
+              height="150px" width="150px" style="border-radius: 50%;" alt="...">
+          </div>
+  
+        </a>  
+        <div class="nav-links" id="navLinks">
+            <!-- <h3 class="text-center" style="color: rgb(231, 238, 238);">LIST OF DEPARTMENTS</h3> -->
+ 
+           <div class="d-flex">
+               <!-- <ul>
+                   <li><a href="" routerLink="/dashboard">DASHBOARD</a></li>
+                   <li><a href="" routerLink="/reservation">BOOKING DETAILS</a></li>
+                   <li><a href="" routerLink="/room">ROOM DETAILS</a></li>
+                   <li><a href="" routerLink="/department">DEPARTMENT</a></li>
+                   <li><a href="" routerLink="/inventory">INVENTORY</a></li>
+                   <li><a href="" routerLink="/staff">STAFF</a></li>
+               </ul> -->
+           </div>
+       </div>
+   </nav>
+   <h3 class="text-center" style="color: rgb(231, 238, 238);">LIST OF ROOMS AVAILABILITY</h3>
+   <!-- table -->
+   <section class="center">
+
+       <div>
+           <!-- <button class="btn btn-success" type="button" data-bs-toggle="modal"
+               data-bs-target="#exampleModal" style="font-size: 15px">AddRoom</button> -->
+           <br>
+           <!-- <a href="" class="hero-btn" routerLink="/guest" style="font-size: 30px;">See Guest Details</a> -->
+           
+       </div>
+       </section>
+       <br>
+<table class="table table-hover table-dark table-bordered" style="text-align: center;">
+    <thead>
+        <tr>
+            <th>Room Id</th>
+            <th>Room Charges</th>
+            <th>Type</th>
+            <th>Description</th>
+            <!-- <th>Availability</th> -->
+            <!-- <th>Availability</th> -->
+            <th>ACTIONS</th>
+            
+
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let room of rooms">
+            <td>{{room.roomId}}</td>
+            <td>{{room.roomCharges}}</td>
+            <td>{{room.roomType}}</td>
+            <td>{{room.roomDesc}}</td>
+            
+            <!-- <td>{{room.roomAvl}}</td> -->
+            <!-- <td> <input type="checkbox" [checked]="room.roomAvl" disabled style="margin-left:50px;"></td> -->
+            <td>
+                <button class="btn btn-success" type="button" type="button"
+                [disabled]="room.roomAvl"
+                (click)="selectRooms(room)" ><mat-icon>done</mat-icon></button>
+            </td>           
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title" id="exampleModalLabel">Add Room Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Room Id</label>
+                        <input type="text" formControlName="roomId" placeholder="Enter your Room ID" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Room Charges</label>
+                        <input type="text" formControlName="roomCharges" placeholder="Enter room charges" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Room Type</label>
+                        <input type="text" formControlName="roomType" placeholder="Room Type" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Room Description</label>
+                        <input type="text" formControlName="roomDesc" placeholder="Room Description" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+               
+              
+              <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal"(click)="addroomto()">Add Details</button>
+            
+              <button type="button" class="btn btn-primary" (click)="updateRooms()">Update Details</button> -->
+            </div>
+        </div>
+    </div>
+</div>
